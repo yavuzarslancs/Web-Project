@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+        <title>Ben Kimim?</title>
+      </head>
+      <body>
+          <style>
+              @media (min-width:1200px) {.container {max-width: 1200px;}}
+          </style>
+          <nav class="navbar sticky-top  navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">Yavuz ARSLAN</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="özgecmis.html">Özgeçmişim</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="sehrim.html">Şehrim</a>
+                    </li>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="takimimiz.html">Takımımız</a>
+                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="ilgialanlarim.html">İlgi alanlarım</a>
+                  </li>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="iletisim.html">İletişim</a>
+                        </li>
+            </div>
+          </nav>
+
+	<form class="container py-5" id="contact-form" method="POST" name="Form" action="iletisim.php"
+		onsubmit="return dogruMu()" role="form">
+		<div class="controls">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="form_name">Ad *</label>
+						<input id="form_name" type="text" name="isim" class="form-control" placeholder="Lütfen isminizi giriniz *">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="form_lastname">Soyad *</label>
+						<input id="form_lastname" type="text" name="soyisim" class="form-control"
+							placeholder="Lütfen soyisminizi giriniz *">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="form_email">Email *</label>
+						<input id="form_email" type="text" name="email" class="form-control"
+							placeholder="Mail adresinizi giriniz *">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="form_need">Lütfen iletişim sebebinizi belirtin *</label>
+						<select id="form_need" name="sebep" class="form-control">
+							<option value=""></option>
+							<option value="İstek">İstek</option>
+							<option value="Öneri">Öneri</option>
+							<option value="Şikayet">Şikayet</option>
+							<option value="Diğer">Diğer</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<span>Cinsiyet</span>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="cinsiyet" id="radio1" value="Kadın">
+						<label class="form-check-label" for="radio1">
+							Kadın
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="cinsiyet" id="radio2" value="Erkek">
+						<label class="form-check-label" for="radio2">
+							Erkek
+						</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<span>Bizi nereden buldunuz?</span>
+					<div class="form-check">
+						<input class="form-check-input" name="secim[]" type="checkbox" value="Sosyal medya">Sosyal Medya
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" name="secim[]" type="checkbox" value="Reklam">Reklam
+
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" name="secim[]" type="checkbox" value="Öneri">Arkadaş önerisi
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" name="secim[]" type="checkbox" value="Diğer">Diğer
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="form_message">Mesaj *</label>
+						<textarea id="form_message" name="mesaj" class="form-control" placeholder="Mesajınız *" rows="4"></textarea>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<input type="reset" class="btn btn-danger" value="Temizle">
+					<input type="submit" class="btn btn-success " value="Gönder">
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+
+<script>
+	function dogruMu() {
+		var isim = document.forms["Form"]["isim"].value;
+		var soyisim = document.forms["Form"]["soyisim"].value;
+		var email = document.forms["Form"]["email"].value;
+		var sebep = document.forms["Form"]["sebep"].value;
+		var cinsiyet = document.forms["Form"]["cinsiyet"].value;
+		var secim = document.forms["Form"]["secim[]"].value;
+		var mesaj = document.forms["Form"]["mesaj"].value;
+		var atpos = email.indexOf("@");
+		var dotpos = email.lastIndexOf(".");
+		if (isim == null || isim == "", soyisim == null || soyisim == "", email == null || email == "", sebep == null ||
+			sebep == "", cinsiyet == null || cinsiyet == "", secim == null || secim == "", mesaj == null || mesaj == "") {
+			alert("Tüm alanlar dolu olmalıdır!");
+			return false;
+		} else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+			alert("Lütfen geçerli bir mail adresi girin...");
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
